@@ -14,17 +14,17 @@ class TravisFormatter < XCPretty::Simple
   end
 
   def format_build_target(target, project, configuration)
-    open_fold("Build")
+    open_fold("Build-#{scrub(target)}")
     super
   end
 
   def format_analyze_target(target, project, configuration)
-    open_fold("Analyze")
+    open_fold("Analyze-#{scrub(target)}")
     super
   end
 
   def format_clean_target(target, project, configuration)
-    open_fold("Clean")
+    open_fold("Clean-#{scrub(target)}")
     super
   end
 
